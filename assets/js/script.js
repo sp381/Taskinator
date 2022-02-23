@@ -25,6 +25,28 @@ var taskFormHandler = function(event) {
   };
 
   createTaskEl(taskDataObj);
+  var createTaskActions = function(taskId) {
+    var actionContainerEl = document.createElement ("div");
+    actionContainerEl.className = "task-actions";
+
+    // create edit button
+  var editButtonEl = document.createElement("button");
+  editButtonEl.textContent = "Edit";
+  editButtonEl.className = "btn edit-btn";
+  editButtonEl.setAttribute("data-task-id", taskId);
+
+  actionContainerEl.appendChild(editButtonEl);
+
+  // create delete button
+  var deleteButtonEl = document.createElement("button");
+  deleteButtonEl.textContent = "Delete";
+  deleteButtonEl.className = "btn delete-btn";
+  deleteButtonEl.setAttribute("data-task-id", taskId);
+
+  actionContainerEl.appendChild(deleteButtonEl);
+
+  return actionContainerEl;
+  };
 };
 
 var createTaskEl = function(taskDataObj) {
