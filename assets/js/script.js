@@ -44,7 +44,13 @@ var taskFormHandler = function(event) {
   deleteButtonEl.setAttribute("data-task-id", taskId);
 
   actionContainerEl.appendChild(deleteButtonEl);
+    var statusSelectEl = document.createElement("select");
+    statusSelectEl.classname = "select-status";
+    statusSelectEl.setAttribute("name", "status-change");
+    statusSelectEl.setAttribute("data-task-id", taskId);
 
+    actionContainerEl.appendChild(statusSelectEl);
+    
   return actionContainerEl;
   };
 };
